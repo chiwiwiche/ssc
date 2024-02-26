@@ -5,8 +5,7 @@
 
 
 :root {
-  /* --main-darker-orange: #d46f11;
-  --main-darker-white: #f9fafb; */
+
   --main-aqua: #00c8e9;
   --main-aqua-darker:#00b1cc;
   --main-grey: #21211f;
@@ -21,7 +20,7 @@
 
   --borders: 4px;
 
-  --fs-xl: clamp(3rem, 10vw + 1rem, 10rem);
+  --fs-xl: clamp(3rem, 4vw + 1rem, 10rem);
   --fs-xs: clamp(2rem, 2vw + 2rem, 6rem);
   --fs-tittles: 2rem;
   --fs-sub-tittles: 1.6rem;
@@ -290,7 +289,7 @@ h6 {
 /********************************************NAVBAR**********************************************/
 
 .header{
-  background-color: var(--main-grey);
+  background-color: var(--main-black);
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -435,6 +434,7 @@ h6 {
   gap: 2rem;
   margin-top: 2rem;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .squares__section-down-box{
   background: var(--main-white);
@@ -514,9 +514,6 @@ h6 {
 
 /********************************************CREW***********************************************/
 
-.carousel__wrapper {
-  
-}
 .carousel__container{
   align-items: center;
   display: flex;
@@ -528,29 +525,55 @@ h6 {
   padding: 2rem 2rem 0 2rem;
   color: var(--main-grey);
 }
-.thumbnails {
+.brand-logo-container { 
+  padding: 3px;
+  border-radius: 100%;
+}
+#brand-discount-slider {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--main-grey);
+  align-items: center;
   margin-bottom: 2rem;
+  border-bottom: 1px solid var(--main-grey);
+  width: 80%;
+  
 }
-.thumbnails__container {
-  cursor: pointer;
-  border-radius: 100%;
-  padding: 3px;  
+#brand-discount-slider ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  width: 80%;
+  justify-content: space-evenly;
+  overflow: hidden;
+  position: relative;
+  transition: all 2s;
 }
-.thumbnails img {
-  cursor: pointer;
-  display: block;
-  height: auto;
+#brand-discount-slider ul li img {
   width: 100px;
+  display: block;
+  cursor: pointer;
+}
+.brand-arrow-prev {
+  width: 10%;
+}
+.brand-arrow-next {
+  width: 10%;
+}
+.crew-arrow{
+  cursor: pointer;
+  text-align: center;
+}
+.crew-arrow i{
+  font-size: 2rem;
+  padding: 0.5rem;
+  color: var(--main-grey);
+}
+.crew-arrow i:hover{
+  color: var(--main-yellow);
 }
 .carousel {
-  position: relative;
 }
 .carousel__slide {
   display: none;
@@ -593,7 +616,7 @@ h6 {
   background: var(--main-aqua);
   color: var(--main-white);
   padding: 1rem 2rem 0.8rem 2rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   border-radius: var(--borders);
   font-family: var(--ff-sub-titles);
   text-transform: uppercase;
@@ -610,8 +633,290 @@ h6 {
 /***********************************************************************************************/
 
 
+/*****************************************REVIEWS***********************************************/
+
+.reviews__wrapper{
+  padding: 0 6rem;
+  color: var(--main-grey);
+  margin: 6rem 0;
+
+}
+.reviews__container{
+  display: flex;
+  flex-direction: column;
+}
+.reviews__tittle{
+
+}
+.reviews__tittle h2{
+  font-family: var(--ff-titles);
+  text-transform: uppercase;
+  font-size: var(--fs-xs);
+  text-align: center;
+}
+.line__under-title-reviews{
+  width: 30%;
+  height: 5px;
+  background: var(--main-yellow);
+  margin: 0 auto 3rem auto;
+
+}
+.reviews__firstRow{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+.reviews__secondRow{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+}
+.reviews__box{
+  background: var(--main-white);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  max-width: 350px;
+  min-width: 350px;
+}
+.reviews__person{
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.reviews__person-photo{
+
+}
+.reviews__person-photo img{
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+}
+.person-Nophoto{
+  background: rgb(195, 112, 237);
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.person-Nophoto p{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: var(--main-white);
+  line-height: 100%;
+}
+.reviews__person-name{
+  margin: 0 0.8rem;
+}
+.person__name{
+  font-size: 1.2rem;
+  font-family: var(--ff-sub-titles);
+  line-height: 100%;
+}
+.person__date{
+  color: #b5b5b5;
+  font-size: 0.9rem;
+}
+.reviews__google{
+  align-self: flex-start;
+  justify-self: flex-end;
+  justify-items: flex-end;
+  justify-content: flex-end;
+  margin-left: 1rem;
+  margin-left: auto;/*this push the div to right separately*/
+}
+.reviews__google img{
+  width: 28px;
+}
+.reviews__stars{
+  margin-bottom: 0.8rem;
+}
+.reviews__text{
+  overflow-y: auto;
+  height: 175px;
+  padding-right: 0.3rem;
+  padding-top: 1rem;
+}
+.checked {
+  color: orange;
+}
+
+/***********************************************************************************************/
 
 
+/******************************************FOOTER***********************************************/
+footer{
+  background: var(--main-black);
+  width: 100%;
+  /* height: 600px; */
+  padding: 4rem 6rem;
+  
+}
+
+.footer__quotes{
+  /* background: red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #4e4e4e;
+ 
+}
+.footer__quotes p{  
+  font-family: var(--ff-sub-titles);
+  font-size: var(--fs-xl);
+  line-height: 110%;
+  /* font-weight: bolder; */
+}
+.footer__quotes p span{  
+  font-family: var(--ff-sub-titles);
+  font-size: var(--fs-xl);
+  line-height: 100%;
+}
+
+#spin {
+  color: var(--main-yellow);
+}
+#spin:after {
+  content:"";
+  animation: spin 10s linear infinite;
+}
+.footer__quotes-link{
+ 
+
+}
+.footer__quotes-link a{
+  background: var(--main-aqua);
+  padding: 1.5rem 2.5rem;
+  color: white;
+  font-family: var(--ff-sub-titles);
+  border-radius: var(--borders);
+ 
+  
+}
+.footer__menu{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  z-index: 99;
+  
+}
+.footer__menu::after {
+  content: '';
+  background: url(../media/footer/mapa.png) no-repeat center;
+  background-size: contain;
+  filter: opacity(5%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+}
+.footer__divs{
+  flex: 1 1 0px;
+}
+.footer__divs h2{
+  margin-bottom: 1.5rem;
+  font-family: var(--ff-titles);
+  font-size: var(--fs-sub-tittles);
+}
+.footer__divs p{
+  margin-bottom: 0.8rem;
+}
+.footer__divs p i{
+  margin-right: 0.8rem;
+  width: 18px;
+  text-align: center;
+}
+
+.footer__divs a{
+  color: var(--main-white);
+  margin-bottom: 0.8rem;
+}
+.footer__divs a:hover{
+  font-size: 1.2rem;
+  /* color: red; */
+  color: var(--main-yellow);
+}
+.footer__divs i{
+  margin-right: 0.8rem;
+  margin-bottom: 0.8rem;
+  width: 18px;
+  text-align: center;
+}
+
+
+.footer__menu-company div{
+  width: 100%;
+  height: 1px;
+  background: #4e4e4e;
+  margin: 1rem 0;
+}
+.footer__menu-logo{
+  /* background: red; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+}
+.footer__menu-logo img{
+  width: 300px;  
+}
+.footer__menu-countryGT{
+  color: #4798d1;
+  font-family: var(--ff-sub-titles);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.footer__menu-countryPA{
+  color: #DB0A13;
+  font-family: var(--ff-sub-titles);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.footer__menu-nav ul li{
+  margin-bottom: 0.8rem;
+}
+.footer__menu-Social ul li{
+  margin-bottom: 0.8rem;
+}
+.footer__menu-Social ul li:nth-child(1) a:hover{
+  color: #316FF6;
+}
+.footer__menu-Social ul li:nth-child(2) a:hover{
+  color: #7e4e9e; 
+}
+.footer__menu-Social ul li:nth-child(3) a:hover{
+  color: #25D366;
+}
+
+
+
+/*******************************************KEYFRAMES*******************************************/
+/***************************************************************************************************/
+@keyframes spin {
+  0% { content:"Help"; }
+  33% { content:"Guidance"; }
+  66% { content:"Quotes"; }
+  100% { content:"Help"; }
+  
+}
 
 /*******************************************MEDIA QUERIES*******************************************/
 /***************************************************************************************************/
@@ -754,14 +1059,12 @@ h6 {
     flex-direction: column;
     align-items: center;
   }
-  .thumbnails {
+  #brand-discount-slider {
     padding-bottom: 0;
     padding-top: 1rem;
     border-bottom: none;
     border-top: 1px solid var(--main-grey);
-    margin-bottom: 2rem;
     width: 100%;
-    gap: 1rem;
   }
   
   
@@ -835,5 +1138,15 @@ h6 {
   }
 
 }
+
+
+
+
+
+
+
+
+
+
 
 
