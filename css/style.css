@@ -753,12 +753,92 @@ h6 {
 /***********************************************************************************************/
 
 
+/******************************************FORM*************************************************/
+.form__wrapper{
+  /* background: var(--main-yellow); */
+  background: var(--main-black);
+  padding: 4rem 6rem;
+}
+.form__container{
+  /* background: green; */
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  
+}
+.form__firstRow{
+  display: flex;
+  /* background: purple; */
+  gap: 2rem;
+  /* flex: 1 1 0px; */
+  align-items: flex-end;
+
+}
+.form__firstRow input{
+  width: 250px;
+  height: 36px;
+  padding: 0.4rem;
+  display: block;
+  border:none;
+}
+.form__firstRow label{
+  font-family: var(--ff-sub-titles);
+  font-size: 0.8rem;
+}
+.form__secondRow label{
+  font-family: var(--ff-sub-titles);
+  font-size: 0.8rem;
+}
+.form__secondRow{
+  /* background: lightblue; */
+  /* flex: 1 1 0px; */
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;
+}
+.form__secondRow textarea{
+  width: 250px;
+  height: 35px;
+  padding: 0.4rem;
+  height: 36px;
+  display: block;
+  overflow: hidden;
+  border:none;
+
+}
+.form__send .send__button{
+  padding: 0.4rem 2rem 0.3rem 2rem;
+  background: var(--main-yellow);
+  color: var(--main-white);
+  font-family: var(--ff-sub-titles);
+  font-size: 0.8rem;
+  border-radius: var(--borders);
+  border: none;
+  cursor: pointer;
+}
+
+form input::placeholder, form textarea::placeholder{
+  color:rgb(190, 190, 190);
+  font-style: italic;
+}
+/* form textarea::placeholder{
+  color:rgb(190, 190, 190);
+  font-style: italic;
+} */
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+/***********************************************************************************************/
+
+
 /******************************************FOOTER***********************************************/
 footer{
   background: var(--main-black);
   width: 100%;
   /* height: 600px; */
-  padding: 4rem 6rem;
+  padding: 0 6rem 4rem 6rem;
   
 }
 
@@ -768,22 +848,20 @@ footer{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 2rem;
+  padding: 2rem 0;
   border-bottom: 1px solid #4e4e4e;
- 
+  border-top: 1px solid #4e4e4e;
 }
 .footer__quotes p{  
   font-family: var(--ff-sub-titles);
   font-size: var(--fs-xl);
   line-height: 110%;
-  /* font-weight: bolder; */
 }
 .footer__quotes p span{  
   font-family: var(--ff-sub-titles);
   font-size: var(--fs-xl);
   line-height: 100%;
 }
-
 #spin {
   color: var(--main-yellow);
 }
@@ -791,18 +869,13 @@ footer{
   content:"";
   animation: spin 10s linear infinite;
 }
-.footer__quotes-link{
- 
 
-}
 .footer__quotes-link a{
   background: var(--main-aqua);
   padding: 1.5rem 2.5rem;
   color: white;
   font-family: var(--ff-sub-titles);
   border-radius: var(--borders);
- 
-  
 }
 .footer__menu{
   position: relative;
@@ -813,7 +886,6 @@ footer{
   justify-content: space-between;
   gap: 2rem;
   z-index: 99;
-  
 }
 .footer__menu::after {
   content: '';
@@ -826,7 +898,6 @@ footer{
   width: 100%;
   height: 100%;
   z-index: -1;
-
 }
 .footer__divs{
   flex: 1 1 0px;
@@ -851,7 +922,6 @@ footer{
 }
 .footer__divs a:hover{
   font-size: 1.2rem;
-  /* color: red; */
   color: var(--main-yellow);
 }
 .footer__divs i{
@@ -860,8 +930,6 @@ footer{
   width: 18px;
   text-align: center;
 }
-
-
 .footer__menu-company div{
   width: 100%;
   height: 1px;
