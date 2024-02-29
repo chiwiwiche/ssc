@@ -639,11 +639,13 @@ h6 {
   padding: 0 6rem;
   color: var(--main-grey);
   margin: 6rem 0;
+  /* background: red; */
 
 }
 .reviews__container{
   display: flex;
   flex-direction: column;
+  /* background: green; */
 }
 .reviews__tittle{
 
@@ -755,31 +757,26 @@ h6 {
 
 /******************************************FORM*************************************************/
 .form__wrapper{
-  /* background: var(--main-yellow); */
-  background: var(--main-black);
-  padding: 4rem 6rem;
+  padding: 4rem 0;
 }
 .form__container{
-  /* background: green; */
   display: flex;
   gap: 2rem;
   justify-content: center;
-  
+  flex-wrap: wrap;  
 }
 .form__firstRow{
   display: flex;
-  /* background: purple; */
   gap: 2rem;
-  /* flex: 1 1 0px; */
   align-items: flex-end;
-
 }
 .form__firstRow input{
   width: 250px;
   height: 36px;
-  padding: 0.4rem;
+  padding: 0.4rem 0.6rem;
   display: block;
   border:none;
+  border-radius: var(--borders);
 }
 .form__firstRow label{
   font-family: var(--ff-sub-titles);
@@ -790,8 +787,6 @@ h6 {
   font-size: 0.8rem;
 }
 .form__secondRow{
-  /* background: lightblue; */
-  /* flex: 1 1 0px; */
   display: flex;
   gap: 2rem;
   align-items: flex-end;
@@ -799,32 +794,31 @@ h6 {
 .form__secondRow textarea{
   width: 250px;
   height: 35px;
-  padding: 0.4rem;
+  padding: 0.4rem 0.6rem;
   height: 36px;
   display: block;
   overflow: hidden;
   border:none;
+  border-radius: var(--borders);
+  resize: vertical;
 
 }
 .form__send .send__button{
   padding: 0.4rem 2rem 0.3rem 2rem;
   background: var(--main-yellow);
-  color: var(--main-white);
   font-family: var(--ff-sub-titles);
   font-size: 0.8rem;
   border-radius: var(--borders);
   border: none;
   cursor: pointer;
 }
+.form__send .send__button:hover{
+  background: var(--main-yellow-darker);
+}
 
 form input::placeholder, form textarea::placeholder{
-  color:rgb(190, 190, 190);
-  font-style: italic;
+  color:rgb(209, 209, 209);
 }
-/* form textarea::placeholder{
-  color:rgb(190, 190, 190);
-  font-style: italic;
-} */
 
 textarea:focus, input:focus{
   outline: none;
@@ -843,14 +837,14 @@ footer{
 }
 
 .footer__quotes{
-  /* background: red; */
+  /* background: chocolate; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 0;
+  padding: 3rem 0 2rem 0;
   border-bottom: 1px solid #4e4e4e;
-  border-top: 1px solid #4e4e4e;
+  /* border-top: 1px solid #4e4e4e; */
 }
 .footer__quotes p{  
   font-family: var(--ff-sub-titles);
@@ -877,6 +871,8 @@ footer{
   font-family: var(--ff-sub-titles);
   border-radius: var(--borders);
 }
+
+
 .footer__menu{
   position: relative;
   width: 100%;
@@ -884,8 +880,10 @@ footer{
   margin-top: 2rem;
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  /* gap: 2rem; */
   z-index: 99;
+  /* background: red; */
+  /* flex-wrap: wrap; */
 }
 .footer__menu::after {
   content: '';
@@ -899,9 +897,39 @@ footer{
   height: 100%;
   z-index: -1;
 }
-.footer__divs{
-  flex: 1 1 0px;
+
+.footer__menu-company{
+  /* background: rgb(200, 214, 8); */
+  min-width: 200px;
+  padding: 1rem 1rem 0 0;
 }
+.footer__menu-services{
+  /* background: green; */
+  min-width: 200px;
+  padding: 1rem 0;
+}
+.footer__menu-nav{
+  /* background: purple; */
+  min-width: 200px;
+  padding: 1rem 0;
+}
+.footer__menu-Social{
+  /* background: rgb(50, 117, 180); */
+  min-width: 200px;
+  padding: 1rem 0;
+}
+.footer__menu-logo{
+  min-width: 200px;
+  /* background: var(--main-aqua); */
+  max-width: 300px;
+  padding: 1rem 0;
+}
+
+
+
+/* .footer__divs{
+  flex: 1 1 0px;
+} */
 .footer__divs h2{
   margin-bottom: 1.5rem;
   font-family: var(--ff-titles);
@@ -930,7 +958,7 @@ footer{
   width: 18px;
   text-align: center;
 }
-.footer__menu-company div{
+.company__middleLine{
   width: 100%;
   height: 1px;
   background: #4e4e4e;
@@ -944,7 +972,7 @@ footer{
 
 }
 .footer__menu-logo img{
-  width: 300px;  
+  width: 100%;  
 }
 .footer__menu-countryGT{
   color: #4798d1;
@@ -988,6 +1016,26 @@ footer{
 
 /*******************************************MEDIA QUERIES*******************************************/
 /***************************************************************************************************/
+@media (max-width: 1483px) {
+  .form__container{
+    gap: 0.7rem;
+  }
+  .form__firstRow{
+    width: 100%;
+    justify-content: center;
+  }
+  .form__secondRow{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .form__secondRow textarea{
+    width: calc(750px + 4rem);
+    height: 70px;
+  }
+
+}
+
 @media (max-width: 1280px) {
   /***********INTRO*************/
   .intro__wrapper{
@@ -1001,6 +1049,30 @@ footer{
   }
   /**********SQUARES***********/
   .squares__wrapper{
+    padding: 0 3rem;
+  }
+/**********FOOTER***********/
+  footer{
+    
+    padding: 0 3rem 4rem 3rem;
+    
+  }
+
+  
+  .footer__menu-services{
+    min-width: 150px;
+  }
+  .footer__menu-nav{
+    min-width: 150px;
+  }
+  .footer__menu-Social{
+    min-width: 150px;
+  }
+ 
+
+
+/**********REVIEWS***********/
+  .reviews__wrapper{
     padding: 0 3rem;
   }
   
@@ -1042,6 +1114,44 @@ footer{
   .carousel__wrapper {
     padding: 0 3rem;
   }
+
+  /*********FOOTER***********/
+  .footer__menu{
+    /* position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    z-index: 99;
+    background: red; */
+    /* justify-content: center; */
+    flex-wrap: wrap;
+  }
+
+  .footer__menu-company{
+    min-width: 100%;
+
+    border-bottom: 2px solid var(--main-yellow);
+  }
+  /* .footer__menu-services{
+    min-width: 200px;
+  }
+  .footer__menu-nav{
+    min-width: 200px;
+  }
+  .footer__menu-Social{
+    min-width: 200px;
+  } */
+  .footer__menu-logo{
+    min-width: 200px;
+    /* background: var(--main-aqua); */
+    max-width: 250px;
+    /* justify: center; */
+    /* margin: 0 auto; */
+  }
+
 }
 
 @media (max-width: 950px) {
@@ -1074,6 +1184,34 @@ footer{
 .squares__section-down-box{
   min-width: 300px;
  }
+
+/*********FORM**********/
+ 
+.form__firstRow{
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.form__firstRow input{
+  width: 350px;
+  
+}
+
+.form__secondRow textarea{
+  width: 350px;
+  height: 105px;
+}
+
+/*********FOOTER**********/
+.footer__menu-logo{
+  /* min-width: 200px;
+  background: var(--main-aqua);
+  max-width: 250px; */
+  /* justify: center; */
+  min-width: 100%;
+  margin-top: 3rem;
+}
 
 }
 
@@ -1135,7 +1273,21 @@ footer{
     width: 100%;
   }
   
-  
+  /**********REVIEWS***********/
+  .reviews__wrapper{
+    padding: 0 1rem;
+  }
+  /**********FOOTER***********/
+  footer{
+    padding: 0 1rem 4rem 1rem;
+  }
+
+  .footer__quotes-link a{
+    padding: 1rem 2rem;
+   
+  }
+
+
 
 }
 
@@ -1164,7 +1316,37 @@ footer{
       margin-bottom: 1rem;
     
     }
+     /************FOOTER************/
+    .footer__quotes{
+      flex-direction: column;
+    }
+    .footer__quotes p{ 
+      margin-bottom: 2rem;
+    }
+    .footer__quotes-link a{
+      padding: 0.8rem 1.5rem;
+     
+    }
 
+    .footer__menu{
+      
+      /* justify-content: center; */
+    }
+
+    .footer__menu-company{
+      min-width: 100%;
+    }
+    .footer__menu-services{
+      min-width: calc(50% - 1rem);
+    }
+    .footer__menu-nav{
+      min-width: calc(50% - 1rem);
+    }
+    .footer__menu-Social{
+      min-width: 100%;
+      border-top: 2px solid var(--main-yellow);
+    }
+   
 }
 
 @media (max-width: 480px) {
@@ -1188,6 +1370,52 @@ footer{
     min-width: 100%;
     max-width: 100%;
   }
+  
+
+  /***********FOOTER*************/
+  .form__firstRow{
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .form_fields{
+    width:100%;
+  }
+  .form__firstRow input{
+    width: 100%;
+    
+  }
+  
+  .form__secondRow textarea{
+    width: 100%;
+  }
+
+
+  .footer__menu{
+      
+    /* justify-content: center; */
+  }
+
+  .footer__menu-company{
+    min-width: 100%;
+  }
+  .footer__menu-services{
+    min-width: 100%;
+    /* text-align: center; */
+    border-bottom: 2px solid var(--main-yellow);
+  }
+
+  .footer__menu-nav{
+    min-width: 100%;
+    /* text-align: center; */
+  }
+  .footer__menu-Social{
+    min-width: 100%;
+    /* text-align: center; */
+  }
+  
+
+  
 }
 
 @media (max-width: 350px) {
